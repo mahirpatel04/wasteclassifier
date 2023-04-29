@@ -14,11 +14,12 @@ width = "500"
 height = "570"
 root.geometry(width + "x" + height)
 
+
 #Creates the introFrame
-introFrame = customtkinter.CTkFrame(root)
+introFrame = customtkinter.CTkFrame(root, width = 400, height = 400)
 
 # Adds a label to the frame
-label = customtkinter.CTkLabel(master=introFrame, text="WASTE MANAGEMENT APP", fg_color=('white' ,"green"), corner_radius=8, height=60, width=180, font=("Helvetica", 24) )
+label = customtkinter.CTkLabel(master=introFrame, text="WASTE MANAGEMENT APP", fg_color=('white' ,"green"), corner_radius=8, height=30, width=400, font=("Helvetica", 24) )
 label.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
 
 
@@ -67,22 +68,23 @@ def returnButton(currentFrame):
 
 
 #different frames depending on the type of waste
-recycleFrame = customtkinter.CTkFrame(root)
+
+recycleFrame = customtkinter.CTkFrame(root, width = 400, height = 400)
 recycleLabel = customtkinter.CTkLabel(recycleFrame, text="Recylce Info Goes Here")
 recycleLabel.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
 returnButton(recycleFrame)
 
-trashFrame = customtkinter.CTkFrame(root)
+trashFrame = customtkinter.CTkFrame(root, width = 400, height = 400)
 trashLabel = customtkinter.CTkLabel(trashFrame, text="Trash Info Goes Here")
 trashLabel.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
 returnButton(trashFrame)
 
-compostFrame = customtkinter.CTkFrame(root)
+compostFrame = customtkinter.CTkFrame(root, width = 400, height = 400)
 compostLabel = customtkinter.CTkLabel(compostFrame, text="Compost Info Goes Here")
 compostLabel.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
 returnButton(compostFrame)
 
-notAvailableFrame = customtkinter.CTkFrame(root)
+notAvailableFrame = customtkinter.CTkFrame(root, width = 400, height = 400)
 notAvailableLabel = customtkinter.CTkLabel(notAvailableFrame, text="ur a retard just shove the trash up ur ass")
 notAvailableLabel.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
 returnButton(notAvailableFrame)
