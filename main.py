@@ -87,8 +87,15 @@ trashLabel.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
 returnButton(trashFrame)
 
 compostFrame = customtkinter.CTkFrame(root, width = 400, height = 400)
-compostLabel = customtkinter.CTkLabel(compostFrame, text="Compost Info Goes Here")
-compostLabel.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
+label = customtkinter.CTkLabel(master=compostFrame, text="COMPOST", fg_color=('white', "#099c2b"), corner_radius=8, height=60, width=180, font=("Helvetica", 24))
+label.place(relx=0.28, rely=0.1, anchor=customtkinter.CENTER)
+# Text box
+textbox = customtkinter.CTkTextbox(master=compostFrame, height=40, width=120, corner_radius=8)
+textbox.place(relx=0.5, rely=0.65, anchor=customtkinter.CENTER, relwidth=0.8, relheight=0.6)
+# Insert text into the text box
+textbox.insert(tk.END,"This item will be composted due to it being one of these options:\n 1. NewsPapers\n 2. Leaves/yard waste  \n 3. Veggie and fruit scraps \n 4. Egg shells (crushed)\n 5. Coffee grounds\n 6. Tissues, paper towels, napkins\n 7. Herbivore manure")
+textbox.insert(tk.END, "\n\n More information will be found here:\n https://www.azdeq.gov/what-can-and-cant-i-compost-compost-guide")
+textbox.configure(state="disabled", height= 120, width=500)
 returnButton(compostFrame)
 
 notAvailableFrame = customtkinter.CTkFrame(root, width = 400, height = 400)
