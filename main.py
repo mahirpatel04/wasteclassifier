@@ -75,8 +75,15 @@ recycleLabel.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
 returnButton(recycleFrame)
 
 trashFrame = customtkinter.CTkFrame(root, width = 400, height = 400)
-trashLabel = customtkinter.CTkLabel(trashFrame, text="Trash Info Goes Here")
-trashLabel.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
+label = customtkinter.CTkLabel(master=trashFrame, text="TRASH", fg_color=('white', "#121111"), corner_radius=8, height=60, width=180, font=("Helvetica", 24))
+label.place(relx=0.28, rely=0.1, anchor=customtkinter.CENTER)
+# Text box
+textbox = customtkinter.CTkTextbox(master=trashFrame, height=40, width=120, corner_radius=8)
+textbox.place(relx=0.5, rely=0.65, anchor=customtkinter.CENTER, relwidth=0.8, relheight=0.6)
+# Insert text into the text box
+textbox.insert(tk.END,"This item will be composted due to it being one of these options:\n 1. Liner bags (cereal, cookies, crackers)\n 2. Plastic bubble wrap  \n 3. Popsicle sticks, toothpicks, wood chips, and pencil shaving \n 4. Light bulbs (not CFLs), dishes and drinking glasses\n 5. Plastic or foil wrappers and aluminum foil\n 6. Laminated plastic film(stand-up pouches, snack food bags)\n 7. Hot drink cups")
+textbox.insert(tk.END, "\n\n More information will be found here:\n https://www.garbageday.com/gd/garbage-tips/blue-green-or-black-bin-heres-the-full-meaning/")
+textbox.configure(state="disabled", height= 120, width=500)
 returnButton(trashFrame)
 
 compostFrame = customtkinter.CTkFrame(root, width = 400, height = 400)
