@@ -85,7 +85,7 @@ compostLabel.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
 returnButton(compostFrame)
 
 notAvailableFrame = customtkinter.CTkFrame(root, width = 400, height = 400)
-notAvailableLabel = customtkinter.CTkLabel(notAvailableFrame, text="ur a retard just shove the trash up ur ass")
+notAvailableLabel = customtkinter.CTkLabel(notAvailableFrame, text="Your waste cannot be classified at this moment, please try again")
 notAvailableLabel.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
 returnButton(notAvailableFrame)
 
