@@ -70,8 +70,15 @@ def returnButton(currentFrame):
 #different frames depending on the type of waste
 
 recycleFrame = customtkinter.CTkFrame(root, width = 400, height = 400)
-recycleLabel = customtkinter.CTkLabel(recycleFrame, text="Recylce Info Goes Here")
-recycleLabel.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
+label = customtkinter.CTkLabel(master=recycleFrame, text="RECYCLING", fg_color=('white', "#3276ed"), corner_radius=8, height=60, width=180, font=("Helvetica", 24))
+label.place(relx=0.28, rely=0.1, anchor=customtkinter.CENTER)
+# Text box
+textbox = customtkinter.CTkTextbox(master=recycleFrame, height=40, width=120, corner_radius=8)
+textbox.place(relx=0.5, rely=0.65, anchor=customtkinter.CENTER, relwidth=0.8, relheight=0.6)
+# Insert text into the text box
+textbox.insert(tk.END,"This item will be recyled due to it being one of these options:\n 1. Plastic Bottles & Containers\n 2. Food & Beverage Cans \n 3. Paper \n 4. Flattened Cardboard & Paperboard\n 5. Food & Beverage Containers\n 6.Glass Bottles & Containers")
+textbox.insert(tk.END, "\n\n More information will be found here:\n https://www.wm.com/us/en/recycle-right/recycling-101")
+textbox.configure(state="disabled", height= 120, width=500)
 returnButton(recycleFrame)
 
 trashFrame = customtkinter.CTkFrame(root, width = 400, height = 400)
