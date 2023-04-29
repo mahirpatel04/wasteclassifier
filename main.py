@@ -18,7 +18,7 @@ root.geometry(width + "x" + height)
 introFrame = customtkinter.CTkFrame(root)
 
 # Adds a label to the frame
-label = customtkinter.CTkLabel(master=root, text="WASTE MANAGEMENT APP", fg_color=('white' ,"green"), corner_radius=8, height=60, width=180, font=("Helvetica", 24) )
+label = customtkinter.CTkLabel(master=introFrame, text="WASTE MANAGEMENT APP", fg_color=('white' ,"green"), corner_radius=8, height=60, width=180, font=("Helvetica", 24) )
 label.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
 
 userWaste = ""
