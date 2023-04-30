@@ -24,7 +24,7 @@ label.place(relx=0.5, rely=0.05, anchor=customtkinter.CENTER)
 
 # Text box for intro
 textbox = customtkinter.CTkTextbox(master=introFrame, height=6, width=100, corner_radius=8)
-textbox.place(relx=0.5, rely=0.4, anchor=customtkinter.CENTER, relwidth=0.9, relheight=0.6)
+textbox.place(relx=0.5, rely=0.42, anchor=customtkinter.CENTER, relwidth=0.9, relheight=0.62)
 # Insert text into the text box
 textbox.insert(tk.END,"Why this app?", )
 textbox.insert(tk.END,"\n Throwing away garbage in the United States is broken. This has become a problem for us, as Americans produces 3 times as much garbage as the global average. One misplaced item can contaminate a full truckload of wastes, which is exteremly harmful to our environment. But why are people still at risk on misplacing their wastes? From our personal experience we realized that many people don't exactly know which bin they should throw their wastes. So hence this app was created. We created this app to educate and direct unsure users where to throw their wastes. All they need to do is type in the item they want to dispose and our databases will direct the user which bin to dispose it in. We hope this app becomes an effiencient tool substain our environment. ", )
@@ -94,7 +94,7 @@ entry.place(relx=0.5, rely=0.8, anchor=customtkinter.CENTER)
 # BUTTON
 button = customtkinter.CTkButton(master=introFrame, text="Classify My Waste", command=originalButton, width=120, 
                                  height=32, border_width=0, corner_radius=8)
-button.place(relx=0.5, rely=0.95, anchor=customtkinter.CENTER)
+button.place(relx=0.5, rely=0.93, anchor=customtkinter.CENTER)
 entry.bind('<Return>', lambda event: originalButton())
 
 def returnButton(currentFrame):
