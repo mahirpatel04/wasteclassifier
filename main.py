@@ -38,23 +38,25 @@ def originalButton():
     for recyclable in recyclables:
         if recyclable in userWaste.lower():
             recycle()
-        currentFrame = recycleFrame
+            currentFrame = recycleFrame
+            return
     for trashable in trashables:
         if trashable in userWaste.lower():
             trash()
             currentFrame = trashFrame
+            return
     for compostable in compostables:
         if compostable in userWaste.lower():
             compost()
             currentFrame = compostFrame
+            return
     else:
         notAvailable()
         currentFrame = notAvailableFrame
-
-  
-
-  
+        return
     
+    currentFrame = introFrame
+
 
 # ENTRY
 entry = customtkinter.CTkEntry(master=introFrame, width=200, height=50, corner_radius=10)
