@@ -31,20 +31,27 @@ currentFrame = introFrame
 def originalButton():
     global entry
     userWaste = entry.get()
-    
-    # if statements to check for types of trash
-    if "recycle" in userWaste.lower():
-        recycle()
+    recyclables = ['paper', 'cardboard', 'plastic']
+    trashables = ['carseat', 'trash', 'shafin']
+    compostables = ['apple', 'banana', 'orange']
+
+    for recyclable in recyclables:
+        if recyclable in userWaste.lower():
+            recycle()
         currentFrame = recycleFrame
-    elif "trash" in userWaste.lower():
-        trash()
-        currentFrame = trashFrame
-    elif "compost" in userWaste.lower():
-        compost()
-        currentFrame = compostFrame
+    for trashable in trashables:
+        if trashable in userWaste.lower():
+            trash()
+            currentFrame = trashFrame
+    for compostable in compostables:
+        if compostable in userWaste.lower():
+            compost()
+            currentFrame = compostFrame
     else:
         notAvailable()
         currentFrame = notAvailableFrame
+
+  
 
   
     
