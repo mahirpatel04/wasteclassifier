@@ -16,7 +16,7 @@ root.geometry(width + "x" + height)
 
 
 #Creates the introFrame
-introFrame = customtkinter.CTkFrame(root, width = 400, height = 400)
+introFrame = customtkinter.CTkFrame(root, width = 10000, height = 10000)
 
 # Adds a label to the frame
 label = customtkinter.CTkLabel(master=introFrame, text="WASTE MANAGEMENT APP", fg_color=('white' ,"green"), corner_radius=8, height=30, width=400, font=("Helvetica", 24) )
@@ -139,21 +139,7 @@ def leaveButton(currentFrame):
     introFrame.pack()
 
 
-
-
-introFrame.pack()
-
-
-# Run the main loop to start the app
-root.mainloop()
-
-
-
-
-
-
-
-introFrame.pack()
+introFrame.place(relx=0.5, rely=0.5, anchor=customtkinter.CENTER, relwidth = 0.8 , relheight = 0.8)
 
 
 # Run the main loop to start the app
