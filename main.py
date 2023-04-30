@@ -34,6 +34,7 @@ def originalButton():
     recyclables = ['paper', 'cardboard', 'plastic']
     trashables = ['carseat', 'trash', 'shafin']
     compostables = ['apple', 'banana', 'orange']
+    hazardouses = ['phone','laptop','oil']
 
     for recyclable in recyclables:
         if recyclable in userWaste.lower():
@@ -49,6 +50,11 @@ def originalButton():
         if compostable in userWaste.lower():
             compost()
             currentFrame = compostFrame
+            return
+    for hazardous in hazardouses:
+        if hazardous in userWaste.lower():
+            hazard()
+            currentFrame = hazardFrame
             return
     else:
         notAvailable()
@@ -114,6 +120,18 @@ textbox.insert(tk.END, "\n\n More information will be found here:\n https://www.
 textbox.configure(state="disabled", height= 120, width=500)
 returnButton(compostFrame)
 
+hazardFrame = customtkinter.CTkFrame(root, width=10000, height=10000 )
+label = customtkinter.CTkLabel(master=hazardFrame, text="HAZARDOUS WASTE", fg_color=('white', "#d10404"), corner_radius=8, height=60, width=180, font=("Helvetica", 24))
+label.place(relx=0.28, rely=0.1, anchor=customtkinter.CENTER)
+# Text box
+textbox = customtkinter.CTkTextbox(master=hazardFrame, height=40, width=120, corner_radius=8)
+textbox.place(relx=0.5, rely=0.65, anchor=customtkinter.CENTER, relwidth=0.8, relheight=0.6)
+# Insert text into the text box
+textbox.insert(tk.END,"This item will be recyled due to it being one of these options:\n 1. Fluorescent lamps\n 2. Cathode ray tubes \n 3. Instruments that contain mercury, batteries, and others. \n 4. Paint\n 5. Motor Oil\n 6. Electronics")
+textbox.insert(tk.END, "\n\n More information will be found here:\n https://calrecycle.ca.gov/homehazwaste/")
+textbox.configure(state="disabled", height= 120, width=500)
+returnButton(hazardFrame)
+
 notAvailableFrame = customtkinter.CTkFrame(root, width = 10000, height = 10000)
 notAvailableLabel = customtkinter.CTkLabel(notAvailableFrame, text="Your waste cannot be classified at this moment, please try again")
 notAvailableLabel.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
@@ -137,6 +155,11 @@ def compost():
     introFrame.pack_forget()
     currentFrame = compostFrame
     compostFrame.pack()
+
+def hazard():
+    introFrame.pack_forget()
+    currentFrame = hazardFrame
+    currentFrame.pack()
 
 def notAvailable():
     introFrame.pack_forget()
