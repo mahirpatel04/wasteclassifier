@@ -1,0 +1,10 @@
+paper
+cardboard
+plastic
+cans
+aluminum
+steel
+construction paper
+Newspapers
+magazines
+glass
