@@ -22,6 +22,15 @@ introFrame = customtkinter.CTkFrame(root, width = 10000, height = 10000)
 label = customtkinter.CTkLabel(master=introFrame, text="WASTE MANAGEMENT APP", fg_color=('white' ,"green"), corner_radius=8, height=30, width=400, font=("Helvetica", 24) )
 label.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
 
+# Text box for intro
+textbox = customtkinter.CTkTextbox(master=introFrame, height=6, width=100, corner_radius=8)
+textbox.place(relx=0.5, rely=0.32, anchor=customtkinter.CENTER, relwidth=0.9, relheight=0.2)
+# Insert text into the text box
+textbox.insert(tk.END,"Why this app?", )
+textbox.insert(tk.END,"\n Throwing away garbage in the United States is broken. This has become a problem for us, as Americans produces 3 times as much garbage as the global average. One misplaced item can contaminate a full truckload of wastes, which is exteremly harmful to our environment. But why are people still at risk on misplacing their wastes? From our personal experience we realized that many people don't exactly know which bin they should throw their wastes. So hence this app was created. We created this app to educate and direct unsure users where to throw their wastes. All they need to do is type in the item they want to dispose and our databases will direct the user which bin to dispose it in. We hope this app becomes an effiencient tool substain our environment. ", )
+textbox.tag_config("center", justify='center')
+textbox.tag_add("center", "1.0", "end")
+textbox.configure(state="disabled", height= 12, width=50)
 
 userWaste = ""
 currentFrame = introFrame
