@@ -31,28 +31,39 @@ currentFrame = introFrame
 def originalButton():
     global entry
     userWaste = entry.get()
-    recyclables = ['paper', 'cardboard', 'plastic']
-    trashables = ['carseat', 'trash', 'shafin']
-    compostables = ['apple', 'banana', 'orange']
-    hazardouses = ['phone','laptop','oil']
+   
+    trashables = []
+    compostables = []
+    hazardouses = []
+    recyclables = []
+   
+
+    with open('WasteClassificationApp/recyclable.txt', 'r') as file1:
+        recyclables = file1.read().split('\n')
+    with open('WasteClassificationApp/trashable.txt', 'r') as file2:
+        trashables = file2.read().split('\n')
+    with open('WasteClassificationApp/compostable.txt', 'r') as file3:
+        compostables = file3.read().split('\n')
+    with open('WasteClassificationApp/hazardous.txt', 'r') as file4:
+        hazardouses = file4.read().split('\n')
 
     for recyclable in recyclables:
-        if recyclable in userWaste.lower():
+        if recyclable == userWaste.lower():
             recycle()
             currentFrame = recycleFrame
             return
     for trashable in trashables:
-        if trashable in userWaste.lower():
+        if trashable == userWaste.lower():
             trash()
             currentFrame = trashFrame
             return
     for compostable in compostables:
-        if compostable in userWaste.lower():
+        if compostable == userWaste.lower():
             compost()
             currentFrame = compostFrame
             return
     for hazardous in hazardouses:
-        if hazardous in userWaste.lower():
+        if hazardous == userWaste.lower():
             hazard()
             currentFrame = hazardFrame
             return
@@ -62,6 +73,7 @@ def originalButton():
         return
     
     currentFrame = introFrame
+
 
 
 # ENTRY
